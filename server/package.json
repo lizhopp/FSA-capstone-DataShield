@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "capstone",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "db:schema": "psql -d greetings -f db/schema.sql",
+    "db:seed": "node --env-file=example.env db/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "pg": "^8.20.0"
+  }
+}
