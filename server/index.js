@@ -13,6 +13,8 @@ app.use(cors())
 
 app.get('/greet', helloWorld)
 
+app.get('/seed',seed)
+
 async function helloWorld(req,res){
     try{
 
@@ -23,6 +25,14 @@ async function helloWorld(req,res){
         console.log("error")
     }
     
+}
+
+
+async function seed(){
+    await db.query(`CREATE TABLE IF NOT EXISTS greetings(is SERIAL PRIMARY KEY, message TEXT NOT NULL)`)
+    await db.query(`INSERT INTO greetings (message)VALUES ($1)`,[message])
+    res.send("database seeded ")
+
 }
 
 db.connect()
