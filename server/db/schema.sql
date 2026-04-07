@@ -51,3 +51,5 @@ CREATE TABLE deletion_requests(
     sent_at TIMESTAMP NOT NULL DEFAULT NOW()
 
 );
+
+

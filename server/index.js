@@ -28,9 +28,9 @@ async function helloWorld(req,res){
 }
 
 
-async function seed(){
-    await db.query(`CREATE TABLE IF NOT EXISTS greetings(is SERIAL PRIMARY KEY, message TEXT NOT NULL)`)
-    await db.query(`INSERT INTO greetings (message)VALUES ($1)`,[message])
+async function seed(req,res){
+    await db.query(`CREATE TABLE IF NOT EXISTS greetings(id SERIAL PRIMARY KEY, message TEXT NOT NULL);`)
+    await db.query(`INSERT INTO greetings (message)VALUES ($1)`,['Hello World 2'])
     res.send("database seeded ")
 
 }
