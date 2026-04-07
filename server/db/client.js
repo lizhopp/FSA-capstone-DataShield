@@ -4,3 +4,4 @@ const url = process.env.DATABASE_URL || "postgres://conno:password@localhost:543
 const db = new pg.Client(url)
 
 export default db
+
