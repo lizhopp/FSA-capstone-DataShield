@@ -14,6 +14,8 @@ app.use(cors())
 app.get('/greet', helloWorld)
 
 app.get('/seed',seed)
+app.get('/register')
+app.get('/login')
 
 async function helloWorld(req,res){
     try{
