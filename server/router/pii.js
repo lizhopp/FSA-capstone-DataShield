@@ -1,7 +1,7 @@
 import express from 'express'
 import { createPii, getPiiById } from '#db/queries/pii.js'
-import getUserFromToken from '../middleware/getUserFromToken'
-import requireUser from '../middleware/requireUser'
+import getUserFromToken from '../middleware/getUserFromToken.js'
+import requireUser from '../middleware/requireUser.js'
 
 
 //Make a route to add and pull from PII
