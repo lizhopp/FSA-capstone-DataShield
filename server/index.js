@@ -1,7 +1,10 @@
-import { getGreeting } from './db/queries/greetings.js';
 import express from 'express'
 import db from './db/client.js';
 import cors from 'cors'
+import usersRouter from './router/users.js'
+import piiRouter from './router/pii.js'
+
+
 
 
 const app = express()
@@ -11,23 +14,11 @@ const PORT = process.env.PORT || 3001
 app.use(express.json());
 app.use(cors())
 
-app.get('/greet', helloWorld)
-
 app.get('/seed',seed)
-app.get('/register')
-app.get('/login')
 
-async function helloWorld(req,res){
-    try{
+app.use('/users', usersRouter)
+app.use('/pii', piiRouter)
 
-        const greeting = await getGreeting()
-        res.status(200).json(greeting)
-
-    }catch(error){
-        console.log("error")
-    }
-    
-}
 
 
 async function seed(req,res){
