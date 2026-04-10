@@ -7,8 +7,20 @@ console.log('Database seeded')
 
 
 async function seed(){
-    const SQL = 'INSERT INTO greetings (message) VALUES ($1) RETURNING *'
+    await db.query(
+    `INSERT INTO brokers (firm_name, email) VALUES
+      ($1, $2),
+      ($3, $4),
+      ($5, $6)`,
+    [
+      'MyLife',
+      'privacy@mylife.com',
+      'Nuwber',
+      'support@nuwber.com',
+      'Radaris',
+      'customer-service@radaris.com',
+    ]
+  )
 
-    const {rows: [message],} = await db.query(SQL,["HELLO WORLD"])
 
 }
