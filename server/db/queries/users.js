@@ -1,4 +1,4 @@
-import db from '#db/client'
+import db from '#db/client.js'
 import bcrypt from 'bcrypt'
 
 //creating user with hashed password

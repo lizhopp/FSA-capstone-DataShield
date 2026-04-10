@@ -1,5 +1,5 @@
 
-import db from '#db/client'
+import db from '#db/client.js'
 
 export async function createPii({user_id, title, first_name, middle_name, last_name, suffix, phone_number, email_address, street, apt, city, us_state, zip_code, dob}){
     const {rows}=await db.query(`

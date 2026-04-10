@@ -1,5 +1,5 @@
 import express from 'express'
-import { createUser } from '#db/queries/users'
+import { createUser } from '#db/queries/users.js'
 import db from '#db/client'
 import jwt from 'jsonwebtoken'
 import 'dotenv/config'
