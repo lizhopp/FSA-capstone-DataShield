@@ -1,21 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Login from './components/Login'
+import Register from './components/Register'
+import {Routes, Route} from 'react-router'
 
 
 function App() {
 
-  const [message, setMessage] = useState("Loading...")
   const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
-  useEffect(()=>{
-    getGreeting()
-    async function getGreeting(){
-      const response = await fetch(`${API_BASE}/greet`)
-      if(response.ok){
-        const json = await response.json()
-        setMessage(json.message)
-      }
-    }
-})
+
 
     
  
@@ -24,7 +18,12 @@ function App() {
 
   return(
     <>
-      <h1>{message}</h1>
+    <Navbar/>
+
+    <Routes>
+      <Route path='/login' element={<Login/>}></Route>
+      <Route path='/register' element={<Register/>}></Route>
+    </Routes>
     </>
   )
 }
