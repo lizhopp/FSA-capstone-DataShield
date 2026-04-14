@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Register from './components/Register'
 import {Routes, Route} from 'react-router'
+import Homepage from './components/Homepage'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <Navbar/>
 
     <Routes>
+      <Route path='/' element={<Homepage/>}></Route> 
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/register' element={<Register/>}></Route>
     </Routes>

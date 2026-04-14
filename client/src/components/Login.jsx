@@ -13,10 +13,10 @@ export default function Login() {
   const tryLogin = async (formData) => {
     setError(null);
 
-    const email = formData.get("email");
+    const username = formData.get("username");
     const password = formData.get("password");
     try {
-      await login({ email, password });
+      await login({ username, password });
       navigate('/')
     } catch (e) {
       setError(e.message);
@@ -34,8 +34,8 @@ export default function Login() {
         }}
       >
         <label className="form-group">
-          Email
-          <input type="email" name="email" required />
+          Username
+          <input type="username" name="username" required />
         </label>
         <label className="form-group">
           Password
