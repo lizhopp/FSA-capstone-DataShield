@@ -3,6 +3,7 @@ import db from './db/client.js';
 import cors from 'cors'
 import usersRouter from './router/users.js'
 import piiRouter from './router/pii.js'
+import 'dotenv/config'
 
 
 
@@ -10,6 +11,8 @@ import piiRouter from './router/pii.js'
 const app = express()
 
 const PORT = process.env.PORT || 3001
+console.log('[BOOT] DATABASE_URL exists:', !!process.env.DATABASE_URL)
+console.log('[BOOT] JWT_SECRET exists:', !!process.env.JWT_SECRET)
 
 app.use(express.json());
 app.use(cors())
